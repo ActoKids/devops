@@ -2,6 +2,14 @@
 var AWS = require("aws-sdk");
 AWS.config.loadFromPath('./config.json');
 
+//create time period variables
+var today = new Date;
+var end = today.getFullYear() + '-' + today.getMonth()+1 + '-' + today.getDate();
+//get yesterday's date
+today.setDate(today.getDate()-1);
+var start = today.getFullYear() + '-' + today.getMonth()+1 + '-' + today.getDate();
+
+//instantiate costexplorer service
 var costexplorer = new AWS.CostExplorer({apiVersion: '2017-10-25', region: "us-east-1"});
 var params = {
     Granularity: "DAILY",
@@ -11,8 +19,8 @@ var params = {
         Key: 'SERVICE',
       }],
     TimePeriod:{
-        Start:"2019-01-10",
-        End:"2019-01-23"
+        Start:start,
+        End:end
     }
 }
 
