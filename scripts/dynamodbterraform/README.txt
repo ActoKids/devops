@@ -9,3 +9,4 @@ Test it out:
     -   terraform -init
     -   terraform -apply
 5. Check for "Apply complete!" message
+6. A DynamoDB table called "messages" is now created in your (us-west-1) region AWS acccount
