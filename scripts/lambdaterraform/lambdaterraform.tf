@@ -43,6 +43,50 @@ resource "aws_iam_policy" "iam_policy_for_api_team" {
 EOF
 }
 
+#terraform resource for {dynamodb role} in aws
+resource "aws_iam_role" "iam_role_for_dynamodb" {
+  name = "iam_role_for_dynamodb"
+  description = "IAM role for dynamodb (DeleteItem under DynamoDB)"
+  assume_role_policy = <<EOF
+{
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1549121080712",
+      "Action": [
+        "dynamodb:CreateBackup",
+        "dynamodb:CreateGlobalTable",
+        "dynamodb:CreateTable",
+        "dynamodb:DeleteItem",
+        "dynamodb:DeleteTable",
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:GetRecords",
+        "dynamodb:GetShardIterator",
+        "dynamodb:ListBackups",
+        "dynamodb:ListGlobalTables",
+        "dynamodb:ListStreams",
+        "dynamodb:ListTables",
+        "dynamodb:ListTagsOfResource",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:RestoreTableFromBackup",
+        "dynamodb:RestoreTableToPointInTime",
+        "dynamodb:TagResource",
+        "dynamodb:UntagResource",
+        "dynamodb:UpdateGlobalTableSettings",
+        "dynamodb:UpdateItem",
+        "dynamodb:UpdateTable"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:dynamodb:<region>:<accountID>:<resourceType>/<resourcePath>"
+    }
+  ]
+}
+EOF
+}
+
 #terraform resource for {lambda function} in aws
 resource "aws_lambda_function" "DeleteMessageById" {
   filename         = "lambda_function_payload.zip"
