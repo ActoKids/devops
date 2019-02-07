@@ -3,7 +3,7 @@
 provider "aws" {
     access_key = "${var.access_key}"
     secret_key = "${var.secret_key}"
-    region = "us-west-2"
+    region     = "${var.region}"
 }
 
 # terraform that calls a crawler lambda function, crawler_development.
