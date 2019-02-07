@@ -1,3 +1,9 @@
+provider "aws" {
+    access_key = "${var.access_key}"
+    secret_key = "${var.secret_key}"
+    region     = "${var.region}"
+}
+
 # terraform that calls a API lambda function, api_development.
 resource "aws_lambda_function" "api_development" {
     function_name = "api_development"
