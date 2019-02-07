@@ -11,8 +11,8 @@ resource "aws_lambda_function" "crawler_development" {
     function_name = "crawler_development"
     runtime = "python3.6"
     filename = "index.py"
-    description = "Crawler test function"
     handler = "index.handler"
+    description = "Crawler test function"
 }
 
 # terraform that calls a API lambda function, api_development.
