@@ -12,14 +12,14 @@ variable "api_development" {
 }
 
 data "aws_lambda_function" "existing" {
-  api_function = "${var.api_development}"
+  api_development = "${var.api_development}"
 }
 
 # terraform that calls a crawler lambda function, crawler_development.
-variable "web_crawler_development" {
+variable "crawler_development" {
   type = "string"
 }
 
 data "aws_lambda_function" "existing" {
-  webcrawler_function = "${var.web_crawler_development}"
+  crawler_development = "${var.crawler_development}"
 }
