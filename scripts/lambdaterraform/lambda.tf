@@ -17,7 +17,7 @@ resource "aws_lambda_function" "crawler_development" {
 # terraform that calls a API lambda function, api_development.
 resource "aws_lambda_function" "api_development" {
     function_name = "api_development"
-    runtime = "nodejs4.3"
+    runtime = "nodejs8.10"
     filename = "test.zip"
     source_code_hash = "${base64sha256(file("test.zip"))}"
     description = "API test function"
