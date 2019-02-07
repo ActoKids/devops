@@ -1,4 +1,4 @@
-# terraform devops/script/lambdaterrraform/lamdba_crawler.tf
+# terraform devops/script/lambdaterrraform/lamdbacrawler.tf
 # required credential information in AWS
 provider "aws" {
     access_key = "${var.access_key}"
