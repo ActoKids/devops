@@ -10,15 +10,16 @@ provider "aws" {
 resource "aws_lambda_function" "crawler_development" {
     function_name = "crawler_development"
     runtime = "python3.6"
-    filename = "crawler.py"
+    filename = "index.py"
     description = "Crawler test function"
+    handler = "index.handler"
 }
 
 # terraform that calls a API lambda function, api_development.
 resource "aws_lambda_function" "api_development" {
     function_name = "api_development"
     runtime = "nodejs8.10"
-    filename = "test.zip"
-    source_code_hash = "${base64sha256(file("test.zip"))}"
+    filename = "index.js"
+    handler = "index.handler"
     description = "API test function"
 }
