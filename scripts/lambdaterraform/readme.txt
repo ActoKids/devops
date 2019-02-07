@@ -8,3 +8,6 @@
     -   terraform -apply
 5. Check for "Apply complete!" message
 6. The Lambda functions for the crawler and API are now called in your AWS acccount
+
+
+(Modified from https://github.com/ActoKids/devops/blob/dev/scripts/dynamodbterraform/README.txt)
