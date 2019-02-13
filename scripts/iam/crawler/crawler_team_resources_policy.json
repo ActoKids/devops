@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1550101534289",
+      "Action": [
+        "lambda:CreateAlias",
+        "lambda:CreateFunction",
+        "lambda:DeleteFunction",
+        "lambda:EnableReplication",
+        "lambda:GetAlias",
+        "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration"
+      ],
+      "Effect": "Allow",
+      "Resource": ""
+    }
+  ]
+}
