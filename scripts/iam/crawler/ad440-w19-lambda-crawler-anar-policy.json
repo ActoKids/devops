@@ -11,6 +11,7 @@
                 "lambda:ListAliases",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:GetFunctionConfiguration",
+                "lambda:PutFunctionConcurrency",
                 "lambda:UpdateAlias",
                 "lambda:UpdateFunctionCode",
                 "lambda:ListTags",
@@ -19,7 +20,7 @@
                 "lambda:GetPolicy",
                 "lambda:CreateAlias"
             ],
-            "Resource": "arn:aws:lambda:us-east-1:*:function:*"
+            "Resource": "arn:aws:lambda:us-east-1:061431082068:function:*"
         },
         {
             "Sid": "VisualEditor1",
@@ -29,7 +30,6 @@
                 "lambda:ListFunctions",
                 "lambda:GetEventSourceMapping",
                 "lambda:ListEventSourceMappings",
-                "lambda:GetAccountSettings",
                 "lambda:CreateEventSourceMapping"
             ],
             "Resource": "*"
