@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1550458469455",
+      "Action": [
+        "acm:AddTagsToCertificate",
+        "acm:DescribeCertificate",
+        "acm:ExportCertificate",
+        "acm:GetCertificate",
+        "acm:ImportCertificate",
+        "acm:ListCertificates",
+        "acm:ListTagsForCertificate",
+        "acm:RemoveTagsFromCertificate",
+        "acm:RequestCertificate",
+        "acm:ResendValidationEmail",
+        "acm:UpdateCertificateOptions"
+      ],
+      "Effect": "Allow",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-2"
+        }
+      }
+    }
+  ]
+}
