@@ -1,21 +1,37 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1550101534289",
-      "Action": [
-        "lambda:CreateAlias",
-        "lambda:CreateFunction",
-        "lambda:DeleteFunction",
-        "lambda:EnableReplication",
-        "lambda:GetAlias",
-        "lambda:GetFunction",
-        "lambda:GetFunctionConfiguration",
-        "lambda:UpdateFunctionCode",
-        "lambda:UpdateFunctionConfiguration"
-      ],
-      "Effect": "Allow",
-      "Resource": ""
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:CreateFunction",
+                "lambda:UpdateFunctionCode",
+                "lambda:ListTags",
+                "lambda:ListVersionsByFunction",
+                "lambda:GetFunction",
+                "lambda:ListAliases",
+                "lambda:UpdateFunctionConfiguration",
+                "lambda:GetFunctionConfiguration",
+                "lambda:GetAlias",
+                "lambda:GetPolicy",
+                "lambda:CreateAlias",
+                "lambda:UpdateAlias"
+            ],
+            "Resource": "arn:aws:lambda:us-east-1:061431082068:function:ad440-w19-lambda-crawler-anar-test"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:UpdateEventSourceMapping",
+                "lambda:ListFunctions",
+                "lambda:GetEventSourceMapping",
+                "lambda:ListEventSourceMappings",
+                "lambda:GetAccountSettings",
+                "lambda:CreateEventSourceMapping"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
