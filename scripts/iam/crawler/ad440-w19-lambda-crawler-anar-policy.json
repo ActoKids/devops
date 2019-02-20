@@ -6,19 +6,20 @@
             "Effect": "Allow",
             "Action": [
                 "lambda:CreateFunction",
-                "lambda:UpdateFunctionCode",
-                "lambda:ListTags",
                 "lambda:ListVersionsByFunction",
                 "lambda:GetFunction",
                 "lambda:ListAliases",
                 "lambda:UpdateFunctionConfiguration",
                 "lambda:GetFunctionConfiguration",
+                "lambda:UpdateAlias",
+                "lambda:UpdateFunctionCode",
+                "lambda:ListTags",
+                "lambda:PublishVersion",
                 "lambda:GetAlias",
                 "lambda:GetPolicy",
-                "lambda:CreateAlias",
-                "lambda:UpdateAlias"
+                "lambda:CreateAlias"
             ],
-            "Resource": "arn:aws:lambda:us-east-1:061431082068:function:ad440-w19-lambda-crawler-anar-test"
+            "Resource": "arn:aws:lambda:us-east-1:*:function:*"
         },
         {
             "Sid": "VisualEditor1",
