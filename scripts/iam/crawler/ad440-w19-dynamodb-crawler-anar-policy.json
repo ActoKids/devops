@@ -5,53 +5,50 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:UpdateTimeToLive",
+                "dynamodb:ConditionCheckItem",
                 "dynamodb:Scan",
                 "dynamodb:Query",
-                "dynamodb:DescribeStream",
                 "dynamodb:UpdateGlobalTable",
+                "dynamodb:UpdateItem",
+                "dynamodb:UpdateContinuousBackups",
                 "dynamodb:UpdateGlobalTableSettings",
-                "dynamodb:DescribeGlobalTableSettings",
-                "dynamodb:GetShardIterator",
-                "dynamodb:DescribeGlobalTable",
-                "dynamodb:RestoreTableFromBackup",
-                "dynamodb:CreateGlobalTable",
-                "dynamodb:DescribeBackup",
-                "dynamodb:DeleteBackup",
-                "dynamodb:GetRecords"
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
+                "dynamodb:DescribeContinuousBackups",
+                "dynamodb:UpdateTable"
             ],
-            "Resource": [
-                "arn:aws:dynamodb:us-east-1:*:table/*/backup/*",
-                "arn:aws:dynamodb::*:global-table/*",
-                "arn:aws:dynamodb:us-east-1:*:table/*/index/*",
-                "arn:aws:dynamodb:us-east-1:*:table/*/stream/*"
-            ]
+            "Resource": "arn:aws:dynamodb:us-east-1:*:table/*",
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
         },
         {
             "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": [
-                "dynamodb:BatchGetItem",
-                "dynamodb:BatchWriteItem",
-                "dynamodb:UpdateTimeToLive",
-                "dynamodb:ConditionCheckItem",
-                "dynamodb:PutItem",
-                "dynamodb:RestoreTableToPointInTime",
-                "dynamodb:Scan",
-                "dynamodb:Query",
-                "dynamodb:UpdateGlobalTable",
-                "dynamodb:UpdateItem",
-                "dynamodb:CreateBackup",
-                "dynamodb:UpdateContinuousBackups",
-                "dynamodb:CreateTable",
                 "dynamodb:UpdateGlobalTableSettings",
-                "dynamodb:DescribeTable",
-                "dynamodb:RestoreTableFromBackup",
-                "dynamodb:GetItem",
-                "dynamodb:DescribeContinuousBackups",
-                "dynamodb:CreateGlobalTable",
-                "dynamodb:UpdateTable"
+                "dynamodb:DescribeGlobalTableSettings",
+                "dynamodb:DescribeGlobalTable",
+                "dynamodb:GetShardIterator",
+                "dynamodb:DescribeStream",
+                "dynamodb:UpdateGlobalTable",
+                "dynamodb:DescribeBackup",
+                "dynamodb:GetRecords"
             ],
-            "Resource": "arn:aws:dynamodb:us-east-1:*:table/*"
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:*:table/*/backup/*",
+                "arn:aws:dynamodb::*:global-table/*",
+                "arn:aws:dynamodb:us-east-1:*:table/*/stream/*"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
         },
         {
             "Sid": "VisualEditor2",
@@ -64,13 +61,17 @@
                 "dynamodb:ListTables",
                 "dynamodb:DescribeReservedCapacity",
                 "dynamodb:ListBackups",
-                "dynamodb:PurchaseReservedCapacityOfferings",
                 "dynamodb:ListTagsOfResource",
                 "dynamodb:DescribeTimeToLive",
                 "dynamodb:DescribeLimits",
                 "dynamodb:ListStreams"
             ],
-            "Resource": "*"
+            "Resource": "*",
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
         }
     ]
 }
