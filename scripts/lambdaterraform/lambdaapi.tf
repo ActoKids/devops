@@ -27,7 +27,6 @@ resource "aws_iam_role" "iam_for_lambda" {
 EOF
 }
 
-
 variable "function_name" {
   type = "string"
 }
