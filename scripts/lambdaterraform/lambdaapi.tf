@@ -6,31 +6,18 @@ provider "aws" {
     region     = "${var.region}"
 }
 
-# terraform that calls a crawler lambda function, crawler_development.
-resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
-
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "lambda.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
+# terraform that creates a Lambda function
+resource "aws_lambda_function" "lambda_development" {
+    function_name = "ad440-w19-lambda-${var.team}-${var.function_name}"
+    filename = "lambda_function.py"
+    runtime  = "${var.runtime}"
+    handler  = "${var.handler}"
+    role     = "${var.role}"
+    environment {
+        variables = {
+    Environment  = "${var.environment}"          //DEV, PROD
+    Name         = "${var.function_name}"        //Function name
+    Team         = "${var.team}"                 //API, UX, CRAWLER
     }
-  ]
 }
-EOF
-}
-
-variable "function_name" {
-  type = "string"
-}
-
-data "aws_lambda_function" "existing" {
-  function_name = "${var.function_name}"
 }
