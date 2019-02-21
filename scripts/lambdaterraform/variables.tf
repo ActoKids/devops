@@ -13,7 +13,7 @@ variable "function_name" {
 variable "role" {
     default = "arn:aws:iam::061431082068:role/iam_for_lambda"
 }
-# the variable determines the runtime and defaults it to python 3.6
+# the variable sets the runtime and defaults it to python 3.6
 variable "runtime" {
     default = "python3.6"
 }
