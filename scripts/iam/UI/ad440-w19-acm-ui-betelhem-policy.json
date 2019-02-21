@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "acm:ExportCertificate",
+                "acm:DescribeCertificate",
+                "acm:ResendValidationEmail",
+                "acm:RemoveTagsFromCertificate",
+                "acm:GetCertificate",
+                "acm:UpdateCertificateOptions",
+                "acm:AddTagsToCertificate",
+                "acm:ImportCertificate"
+            ],
+            "Resource": "arn:aws:acm:us-east-2:061431082068:certificate/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "acm:RequestCertificate",
+                "acm:ListCertificates",
+                "acm:ListTagsForCertificate"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
