@@ -4,5 +4,5 @@
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {
-    default = "us-west-2"
+    default = "us-east-1"
 }
