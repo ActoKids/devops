@@ -1,21 +1,86 @@
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "Stmt1550101534289",
-      "Action": [
-        "lambda:CreateAlias",
-        "lambda:CreateFunction",
-        "lambda:DeleteFunction",
-        "lambda:EnableReplication",
-        "lambda:GetAlias",
-        "lambda:GetFunction",
-        "lambda:GetFunctionConfiguration",
-        "lambda:UpdateFunctionCode",
-        "lambda:UpdateFunctionConfiguration"
-      ],
-      "Effect": "Allow",
-      "Resource": ""
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:TagResource",
+                "lambda:ListVersionsByFunction",
+                "lambda:GetLayerVersion",
+                "lambda:GetFunction",
+                "lambda:ListAliases",
+                "lambda:UpdateFunctionConfiguration",
+                "lambda:GetFunctionConfiguration",
+                "lambda:GetLayerVersionPolicy",
+                "lambda:UntagResource",
+                "lambda:PutFunctionConcurrency",
+                "lambda:UpdateAlias",
+                "lambda:UpdateFunctionCode",
+                "lambda:ListTags",
+                "lambda:PublishVersion",
+                "lambda:GetAlias",
+                "lambda:GetPolicy"
+            ],
+            "Resource": [
+                "arn:aws:lambda:us-east-1:*:function:*",
+                "arn:aws:lambda:us-east-1:*:layer:*:*"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:TagResource",
+                "lambda:GetLayerVersion",
+                "lambda:ListVersionsByFunction",
+                "lambda:GetFunction",
+                "lambda:ListAliases",
+                "lambda:UpdateFunctionConfiguration",
+                "lambda:GetFunctionConfiguration",
+                "lambda:GetLayerVersionPolicy",
+                "lambda:UntagResource",
+                "lambda:PutFunctionConcurrency",
+                "lambda:UpdateAlias",
+                "lambda:UpdateFunctionCode",
+                "lambda:ListTags",
+                "lambda:PublishVersion",
+                "lambda:GetAlias",
+                "lambda:GetPolicy"
+            ],
+            "Resource": [
+                "arn:aws:lambda:us-east-1:*:function:*",
+                "arn:aws:lambda:us-east-1::function:"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:UpdateEventSourceMapping",
+                "lambda:ListFunctions",
+                "lambda:GetEventSourceMapping",
+                "lambda:ListEventSourceMappings",
+                "lambda:GetAccountSettings",
+                "lambda:ListLayers",
+                "lambda:ListLayerVersions"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        }
+    ]
 }
