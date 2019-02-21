@@ -1,4 +1,12 @@
-# terraform devops/script/lambdaterrraform/lamdbacrawler.tf
+# terraform devops/script/lambdaterrraform/lamdba.tf
+
+# required for AWS
+variable "access_key" {}
+variable "secret_key" {}
+variable "region" {
+    default = "us-east-1"
+}
+
 # required credential information in AWS
 provider "aws" {
     access_key = "${var.access_key}"
