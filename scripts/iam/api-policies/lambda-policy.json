@@ -37,7 +37,7 @@
         "lambda:UpdateFunctionConfiguration"
       ],
       "Effect": "Allow",
-      "Resource": "*",
+      "Resource": "arn:aws:lambda:us-east-2:<redacted>:function:ad440-w19-lambda-api-amy-test",
       "Condition": {
         "StringEquals": {
           "aws:RequestedRegion": "us-east-2"
