@@ -86,7 +86,7 @@
         "cognito-idp:VerifyUserAttribute"
       ],
       "Effect": "Allow",
-      "Resource": "*",
+      "Resource": "arn:aws:cognito-idp:us-east-2:<redacted>:userpool/us-east-2_FTAHFB4aY",
       "Condition": {
         "StringEquals": {
           "aws:RequestedRegion": "us-east-2"
