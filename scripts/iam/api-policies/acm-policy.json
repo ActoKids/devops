@@ -17,7 +17,7 @@
         "acm:UpdateCertificateOptions"
       ],
       "Effect": "Allow",
-      "Resource": "*",
+      "Resource": "arn:aws:acm:us-east-2:<redacted>:certificate/2beae554-deca-4198-952b-606c5b9033c2",
       "Condition": {
         "StringEquals": {
           "aws:RequestedRegion": "us-east-2"
