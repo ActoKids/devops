@@ -41,7 +41,7 @@
                 "dynamodb:UpdateTimeToLive"
             ],
             "Effect": "Allow",
-            "Resource": "*",
+            "Resource": "arn:aws:dynamodb:us-east-2:<redacted>:table/ad440-w19-api-amy-test",
             "Condition": {
                 "StringEquals": {
                     "aws:RequestedRegion": "us-east-2"
