@@ -1,0 +1,164 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "apigateway:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53:*"
+            ],
+            "Resource": 
+                "*", 
+                "Condition": {
+                    "StringEquals": {
+                        "aws:RequestedRegion": "us-east-2"
+                    }
+                }
+            
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:*"
+            ],
+            "Resource": 
+                "*", 
+                "Condition": {
+                    "StringEquals": {
+                        "aws:RequestedRegion": "us-east-2"
+                    }
+                }
+            
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Resource": 
+                "*", 
+                "Condition": {
+                    "StringEquals": {
+                        "aws:RequestedRegion": "us-east-2"
+                    }
+                }
+            
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lightsail:*"
+            ],
+            "Resource": 
+                "*", 
+                "Condition": {
+                    "StringEquals": {
+                        "aws:RequestedRegion": "us-east-2"
+                    }
+                }
+            
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sqs:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sns:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "acm:*"
+            ],
+            "Resource": 
+                "*", 
+                "Condition": {
+                    "StringEquals": {
+                        "aws:RequestedRegion": "us-east-2"
+                    }
+                }
+        }
+    ]
+}
