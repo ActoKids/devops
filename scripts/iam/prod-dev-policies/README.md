@@ -1,7 +1,7 @@
-Markup :  ### Prod & Dev Policies ###
+Prod & Dev Policies
 
 
-Markup :  #### Policy Contents ####
+Policy Contents
 
 prod-pol-1.json:
 	Cognito
@@ -16,10 +16,8 @@ prod-pol-2.json:
 	CloudWatch
 	LightSail
 
-
 prod-pol-1.json:
 	DynamoDB
-
 
 prod-pol-1.json:
 	Route53
