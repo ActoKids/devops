@@ -12,4 +12,10 @@ resource "aws_s3_bucket" "demo" {
         index_document = "index.html"
         error_document = "404.html"
     }
+    
+    tags {
+        Name         = "${var.name}"        //Table name
+        Team         = "${var.teamname}"    //API, UX, CRAWLER
+        Environment  = "${var.environment}" //ONEBOX, DEV, PROD
+    }
 }
