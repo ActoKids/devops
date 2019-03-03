@@ -14,4 +14,11 @@ resource "aws_lambda_function" "crawler_development" {
     handler = "index.handler"
     description = "Crawler test function"
     role = "${aws_iam_role.lambda_exec_role.arn}"
+    
+    tags {
+    Name         = "${var.name}"        //Table name
+    Team         = "${var.teamname}"    //API, UX, CRAWLER
+    Environment  = "${var.environment}" //ONEBOX, DEV, PROD
+  }
+    
 }
