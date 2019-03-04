@@ -4,6 +4,12 @@
 - Configure API GW to use the CNAME + SSL certificate
 - Configure the API Gateway to point to Lambda
 
+**#SOURCES:**	
+-   [Link 1](https://andydote.co.uk/2017/03/17/terraform-aws-lambda-api-gateway/)
+-   [Link 2](https://dev.to/frosnerd/deploying-an-http-api-on-aws-using-lambda-and-api-gateway-g61)
+-   [Link 3](https://jarombek.com/blog/sep-7-2018-aws-lambda-api-gateway)
+-   [Link 4](https://medium.com/onfido-tech/aws-api-gateway-with-terraform-7a2bebe8b68f)
+
 ## Getting Started
 
 To complete this task, I used the references above which talks about instantiating an API Gateway and binding both certificates and Lambda functions to it. The Lambda function itself uses the Dev function created by @ZakBrinlee. 
