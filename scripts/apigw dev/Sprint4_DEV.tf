@@ -73,7 +73,7 @@ resource "aws_api_gateway_integration" "events_api_method-integration" { # Insta
   request_parameters =  {
     "integration.request.path.proxy" = "method.request.path.proxy"
   }
-# }
+}
 # resource "aws_api_gateway_integration" "events_api_method-integration" {  # Instantiates APIGW integration between the api and lambda function
 #   rest_api_id = "${aws_api_gateway_rest_api.events_api.id}"
 #   resource_id = "${aws_api_gateway_resource.events_api_resource.id}"
