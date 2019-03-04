@@ -16,10 +16,10 @@ To complete this task, I used the references above which talks about instantiati
 
 ### Prerequisites
 
-AWS CLI
-AWC Credentials Configured
-Hashicorp Terraform
-IDE (VSCode)
+- AWS CLI
+- AWC Credentials Configured
+- Hashicorp Terraform
+- IDE (VSCode)
 
 ### Installing
 
@@ -40,9 +40,9 @@ After the command "terraform apply" check your AWS console for the following:
 ## Deployment
 
 #These methods need to be configured PER ENVIRONMENT:
-aws_api_gateway_integration
-aws_api_gateway_integration_response
-aws_api_gateway_deployment
+- aws_api_gateway_integration
+- aws_api_gateway_integration_response
+- aws_api_gateway_deployment
 
 
 # 4) Want to test it out ? 
