@@ -5,8 +5,9 @@ Automation for Api gateway in 1box environment
 
 ### Prerequisites
 1. AWS CLI
-[Download AWS CLI on Windows] (https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html)
-[Download AWS CLI on Mac] (https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
+
+[Download AWS CLI on Windows](https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html)
+[Download AWS CLI on Mac](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
 
 2. Configure Your AWS Account
  ```
