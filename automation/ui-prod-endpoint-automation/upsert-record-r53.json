@@ -1,4 +1,4 @@
-{
+<<EOF {
             "Comment": "UPSERT a record for the hosted zone 2edusite.com",
             "Changes": [{
             "Action": "UPSERT",
@@ -7,7 +7,7 @@
                                     "Type": "A",
 				    "AliasTarget":{
 					    "HostedZoneId": "Z2FDTNDATAQYW2",
-					    "DNSName": "d2lu9g5iotegqb.cloudfront.net",
+					    "DNSName": "d1mx7lg22jtdst.cloudfront.net",
 					    "EvaluateTargetHealth": false
 				    }
 }
@@ -19,9 +19,9 @@
 		   		   "Type": "A",
 				   "AliasTarget":{
 				   	"HostedZoneId": "Z3AQBSTGFYJSTF",
-					"DNSName": "s3-website-us-east-1.amazonaws.com",
+					"DNSName": "dawits3testweb.com",
 					"EvaluateTargetHealth": false
 				   }		   
 	    }}
 	    ]
-}
+} EOF
