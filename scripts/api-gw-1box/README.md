@@ -33,6 +33,8 @@ Automation for Api gateway in 1box environment
 5. Apply Terraform 
 ```$ terraform apply```
 
+You can get zone id from Route 53 -> hosted zone-> check a box
+
 ## Running the tests
 1. New CNAME in Route 53
 2.
