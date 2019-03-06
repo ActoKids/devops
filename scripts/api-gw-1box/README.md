@@ -32,3 +32,7 @@ Automation for Api gateway in 1box environment
 
 5. Apply Terraform 
 ```$ terraform apply```
+
+## Running the tests
+1. New CNAME in Route 53
+2.
