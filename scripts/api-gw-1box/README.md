@@ -1,9 +1,9 @@
-#Sprint 4 
+# Sprint 4 
 Automation for Api gateway in 1box environment
 
-##Getting Started
+## Getting Started
 
-###Prerequisites
+### Prerequisites
 1. AWS CLI
 [Download AWS CLI on Windows] (https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html)
 [Download AWS CLI on Mac] (https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
@@ -15,7 +15,7 @@ Automation for Api gateway in 1box environment
 
 3. Terraform 
 
-###Installing
+### Installing
 1. Clone repo
 ``` $ git clone https://github.com/ActoKids/devops.git```
 2. Go to scripts/api-gw-1box repo
