@@ -6,8 +6,8 @@
                                     "Name": "dawits3testweb.com",
                                     "Type": "A",
 				    "AliasTarget":{
-					    "HostedZoneId": "Z3AQBSTGFYJSTF",
-					    "DNSName": "s3-website-us-east-1.amazonaws.com",
+					    "HostedZoneId": "Z2FDTNDATAQYW2",
+					    "DNSName": "d2lu9g5iotegqb.cloudfront.net",
 					    "EvaluateTargetHealth": false
 				    }
 }

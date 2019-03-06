@@ -1,0 +1,89 @@
+{
+     "DistributionConfig": {
+         "Comment": "Creating distribution for 2edusite.com",
+         "CacheBehaviors": {
+             "Quantity": 0
+         }, 
+         "Logging": {
+             "Bucket": "", 
+             "Prefix": "", 
+             "Enabled": false, 
+             "IncludeCookies": false
+         }, 
+         "Origins": {
+             "Items": [
+                 {
+                     "OriginPath": "", 
+                     "CustomOriginConfig": {
+                         "OriginProtocolPolicy": "https-only", 
+                         "HTTPPort": 80, 
+                         "HTTPSPort": 443
+                     }, 
+                     "Id": "custom-dawits3testweb", 
+                     "DomainName": "dawits3testweb.com.s3-website-us-east-1.amazonaws.com"
+                 }
+             ], 
+             "Quantity": 1
+         }, 
+         "DefaultRootObject": "index.html", 
+         "PriceClass": "PriceClass_All", 
+         "Enabled": true, 
+         "DefaultCacheBehavior": {
+             "TrustedSigners": {
+                 "Enabled": false, 
+                 "Quantity": 0
+             }, 
+             "TargetOriginId": "custom-dawits3testweb", 
+             "ViewerProtocolPolicy": "redirect-to-https", 
+             "ForwardedValues": {
+                 "Headers": {
+                     "Quantity": 0
+                 }, 
+                 "Cookies": {
+                     "Forward": "none"
+                 }, 
+                 "QueryString": false
+             }, 
+             "SmoothStreaming": false, 
+             "AllowedMethods": {
+                 "Items": [
+                   "GET", 
+                   "HEAD",
+                   "OPTIONS",
+                   "PUT",
+                   "POST",
+                   "PATCH",
+                   "DELETE"
+                 ], 
+                 "CachedMethods": {
+                     "Items": [
+                         "GET", 
+                         "HEAD"
+                     ], 
+                     "Quantity": 2
+                }, 
+                 "Quantity": 7
+             }, 
+             "MinTTL": 0
+         }, 
+         "CallerReference": "2edusite distribution 2019-05-03(test)",
+         "CustomErrorResponses": {
+             "Quantity": 0
+         }, 
+         "Restrictions": {
+             "GeoRestriction": {
+                 "RestrictionType": "none", 
+                 "Quantity": 0
+             }
+         }, 
+         "Aliases": {
+             "Items": [
+                 "dawits3testweb.com"
+             ], 
+             "Quantity": 1
+         },
+	  "ViewerCertificate": {
+		  "CloudFrontDefaultCertificate": true,
+		  "CertificateSource": "cloudfront"}
+   }
+}
