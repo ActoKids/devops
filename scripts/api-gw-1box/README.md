@@ -7,6 +7,7 @@ Automation for Api gateway in 1box environment
 1. AWS CLI
 
 [Download AWS CLI on Windows](https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html)
+
 [Download AWS CLI on Mac](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
 
 2. Configure Your AWS Account
@@ -19,10 +20,13 @@ Automation for Api gateway in 1box environment
 ### Installing
 1. Clone repo
 ``` $ git clone https://github.com/ActoKids/devops.git```
+
 2. Go to scripts/api-gw-1box repo
-3. Initialize terraorm 
+
+3. Initialize terraform 
 ```$ terraform init ```
 4. Plan Terraform 
+
   This will show what this terraform file will execute
 ```$ terraform plan```
 
