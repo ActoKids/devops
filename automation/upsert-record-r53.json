@@ -1,0 +1,27 @@
+{
+            "Comment": "UPSERT a record for the hosted zone 2edusite.com",
+            "Changes": [{
+            "Action": "UPSERT",
+                        "ResourceRecordSet": {
+                                    "Name": "dawits3testweb.com",
+                                    "Type": "A",
+				    "AliasTarget":{
+					    "HostedZoneId": "Z3AQBSTGFYJSTF",
+					    "DNSName": "s3-website-us-east-1.amazonaws.com",
+					    "EvaluateTargetHealth": false
+				    }
+}
+	    }, 
+	    		{
+	    "Action": "UPSERT",
+			"ResourceRecordSet": {
+		    		   "Name": "www.dawits3testweb.com",
+		   		   "Type": "A",
+				   "AliasTarget":{
+				   	"HostedZoneId": "Z3AQBSTGFYJSTF",
+					"DNSName": "s3-website-us-east-1.amazonaws.com",
+					"EvaluateTargetHealth": false
+				   }		   
+	    }}
+	    ]
+}
