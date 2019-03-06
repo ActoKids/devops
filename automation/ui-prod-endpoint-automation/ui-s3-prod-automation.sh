@@ -1,11 +1,17 @@
 #!/bin/sh
 #enviromental variables
 ACTO_HOSTED_ZONE_ID=Z254GRV0BIP8AH
+ORIGIN_DOMAIN_NAME="ak-ui-prod-s3.s3-website.us-east-2.amazonaws.com"
 #shell/bash script for automating of endpoint creation(2edusite.com and www.2edusite.com)
 #configures credentials for aws
 aws configure
-#creates an cloudfront distribution with attached SSL certificate
-aws cloudfront create-distribution --cli-input-json '
+#checks if there is a cloudfront dist associated with 2edusite.com
+#creates an cloudfront distribution with attached SSL certificate if none found
+CF_DIST_DOMAIN_NAME=$(aws cloudfront list-distributions --query "DistributionList.Items[].{DomainName: DomainName, OriginDomainName: Origins.Items[0].DomainName}[?contains(OriginDomainName, 'ak-ui-prod-s3.s3-website.us-east-2.amazonaws.com')] | [0].DomainName" --output text)
+echo $CF_DIST_DOMAIN_NAME
+if [ $CF_DIST_DOMAIN_NAME == "None" ]
+then
+CF_DIST_DOMAIN_NAME=$(aws cloudfront create-distribution --cli-input-json '
 {
      "DistributionConfig": {
          "Comment": "Creating distribution for 2edusite.com",
@@ -97,8 +103,8 @@ aws cloudfront create-distribution --cli-input-json '
           "SSLSupportMethod": "sni-only",
           "MinimumProtocolVersion": "TLSv1.1_2016"}
    }
-}'
-
+}' --query "DistributionList.Items[].{DomainName: DomainName, OriginDomainName: Origins.Items[0].DomainName}[?contains(OriginDomainName, 'ak-ui-prod-s3.s3-website.us-east-2.amazonaws.com')] | [0].DomainName" --output text)
+fi
 #creates an or updates existing record set in
 aws route53 change-resource-record-sets --hosted-zone-id $ACTO_HOSTED_ZONE_ID --change-batch '
 {
@@ -110,7 +116,7 @@ aws route53 change-resource-record-sets --hosted-zone-id $ACTO_HOSTED_ZONE_ID --
                                     "Type": "A",
 				    "AliasTarget":{
 					    "HostedZoneId": "Z2FDTNDATAQYW2",
-					    "DNSName": "d39by6usj8vrny.cloudfront.net",
+					    "DNSName": "'"$CF_DIST_DOMAIN_NAME"'",
 					    "EvaluateTargetHealth": false
 				    }
 }
