@@ -1,5 +1,5 @@
 {
-            "Comment": "UPSERT a record for the hosted zone 2edusite.com",
+            "Comment": "UPSERT a records for the hosted zone 2edusite.com",
             "Changes": [{
             "Action": "UPSERT",
                         "ResourceRecordSet": {
