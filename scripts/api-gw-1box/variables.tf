@@ -1,6 +1,5 @@
-# variable "access_key" {}
-# variable "secret_key" {}
 variable "region" {
-    default = "us-west-2"}
-# variable "accountId" {}
+    default = "us-west-2"
+}
+
 variable "zone_id"{}
