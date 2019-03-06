@@ -19,8 +19,8 @@
                          "HTTPPort": 80, 
                          "HTTPSPort": 443
                      }, 
-                     "Id": "custom-dawits3testweb", 
-                     "DomainName": "dawits3testweb.com.s3-website-us-east-1.amazonaws.com"
+                     "Id": "custom-2edusite.com", 
+                     "DomainName": "ak-ui-prod-s3.s3-website.us-east-2.amazonaws.com"
                  }
              ], 
              "Quantity": 1
@@ -33,7 +33,7 @@
                  "Enabled": false, 
                  "Quantity": 0
              }, 
-             "TargetOriginId": "custom-dawits3testweb", 
+             "TargetOriginId": "custom-2edusite.com", 
              "ViewerProtocolPolicy": "redirect-to-https", 
              "ForwardedValues": {
                  "Headers": {
@@ -78,7 +78,7 @@
          }, 
          "Aliases": {
              "Items": [
-                 "dawits3testweb.com"
+                 "2edusite.com"
              ], 
              "Quantity": 1
          },
