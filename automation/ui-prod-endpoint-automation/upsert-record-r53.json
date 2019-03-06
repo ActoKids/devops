@@ -7,7 +7,7 @@
                                     "Type": "A",
 				    "AliasTarget":{
 					    "HostedZoneId": "Z2FDTNDATAQYW2",
-					    "DNSName": "d3ms0x031awfxi.cloudfront.net",
+					    "DNSName": "d39by6usj8vrny.cloudfront.net",
 					    "EvaluateTargetHealth": false
 				    }
 }
