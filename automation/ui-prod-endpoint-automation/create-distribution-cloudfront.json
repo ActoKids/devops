@@ -83,7 +83,10 @@
              "Quantity": 1
          },
 	  "ViewerCertificate": {
-		  "CloudFrontDefaultCertificate": true,
-		  "CertificateSource": "cloudfront"}
+		  "CloudFrontDefaultCertificate": false,
+          "ACMCertificateArn": "arn:aws:acm:us-east-1:061431082068:certificate/02495bbe-c62b-4ccf-806d-fc7731b8a839", 
+		  "CertificateSource": "acm",
+          "SSLSupportMethod": "sni-only",
+          "MinimumProtocolVersion": "TLSv1.1_2016"}
    }
 }
