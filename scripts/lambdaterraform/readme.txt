@@ -1,6 +1,6 @@
 1. Install Terraform  - Link: https://www.hashicorp.com/products/terraform)
 2. Install AWS Cli    - Link: https://aws.amazon.com/cli/
-3. Clone the script - lambda.tf for the crawler
+3. Clone the script - lambda.tf and variables.tf
 4. Run these commands:
     -   aws configure        #enter your aws credentials (AWS Access Key and ID)
     -   terraform -version   #check installation
