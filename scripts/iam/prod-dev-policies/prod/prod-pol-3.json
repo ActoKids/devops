@@ -1,0 +1,114 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor11",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:DescribeReservedCapacityOfferings",
+                "dynamodb:ListGlobalTables",
+                "dynamodb:TagResource",
+                "dynamodb:UntagResource",
+                "dynamodb:ListTables",
+                "dynamodb:DescribeReservedCapacity",
+                "dynamodb:ListBackups",
+                "dynamodb:PurchaseReservedCapacityOfferings",
+                "dynamodb:ListTagsOfResource",
+                "dynamodb:DescribeTimeToLive",
+                "dynamodb:DescribeLimits",
+                "dynamodb:ListStreams"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor8",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:UpdateTimeToLive",
+                "dynamodb:ConditionCheckItem",
+                "dynamodb:PutItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:RestoreTableToPointInTime",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:UpdateGlobalTable",
+                "dynamodb:UpdateItem",
+                "dynamodb:CreateBackup",
+                "dynamodb:DeleteTable",
+                "dynamodb:UpdateContinuousBackups",
+                "dynamodb:CreateTable",
+                "dynamodb:UpdateGlobalTableSettings",
+                "dynamodb:DescribeTable",
+                "dynamodb:RestoreTableFromBackup",
+                "dynamodb:GetItem",
+                "dynamodb:DescribeContinuousBackups",
+                "dynamodb:CreateGlobalTable",
+                "dynamodb:UpdateTable"
+            ],
+            "Resource": "arn:aws:dynamodb:us-east-2:<SCHOOL_ACCT_NUMBER>:table/*"
+        },
+        {
+            "Sid": "VisualEditor9",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:DescribeStream",
+                "dynamodb:UpdateGlobalTable",
+                "dynamodb:UpdateGlobalTableSettings",
+                "dynamodb:DescribeGlobalTableSettings",
+                "dynamodb:GetShardIterator",
+                "dynamodb:DescribeGlobalTable",
+                "dynamodb:RestoreTableFromBackup",
+                "dynamodb:CreateGlobalTable",
+                "dynamodb:DescribeBackup",
+                "dynamodb:DeleteBackup",
+                "dynamodb:GetRecords"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-2:<SCHOOL_ACCT_NUMBER>:table/*/stream/*",
+                "arn:aws:dynamodb::<SCHOOL_ACCT_NUMBER>:global-table/*",
+                "arn:aws:dynamodb:us-east-2:<SCHOOL_ACCT_NUMBER>:table/*/backup/*",
+                "arn:aws:dynamodb:us-east-2:<SCHOOL_ACCT_NUMBER>:table/*/index/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor10",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:DeleteItem",
+                "dynamodb:RestoreTableToPointInTime",
+                "dynamodb:CreateBackup",
+                "dynamodb:UpdateGlobalTable",
+                "dynamodb:DeleteTable",
+                "dynamodb:UpdateContinuousBackups",
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
+                "dynamodb:DescribeContinuousBackups",
+                "dynamodb:CreateGlobalTable",
+                "dynamodb:BatchGetItem",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:UpdateTimeToLive",
+                "dynamodb:ConditionCheckItem",
+                "dynamodb:PutItem",
+                "dynamodb:Scan",
+                "dynamodb:DescribeStream",
+                "dynamodb:Query",
+                "dynamodb:UpdateItem",
+                "dynamodb:CreateTable",
+                "dynamodb:UpdateGlobalTableSettings",
+                "dynamodb:DescribeGlobalTableSettings",
+                "dynamodb:DescribeGlobalTable",
+                "dynamodb:GetShardIterator",
+                "dynamodb:RestoreTableFromBackup",
+                "dynamodb:DeleteBackup",
+                "dynamodb:DescribeBackup",
+                "dynamodb:UpdateTable",
+                "dynamodb:GetRecords"
+            ],
+            "Resource": "arn:aws:dynamodb:us-east-2:<SCHOOL_ACCT_NUMBER>:*"
+        }
+    ]
+}

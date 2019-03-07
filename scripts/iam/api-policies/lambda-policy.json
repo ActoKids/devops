@@ -1,0 +1,48 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1550458342544",
+      "Action": [
+        "lambda:AddLayerVersionPermission",
+        "lambda:AddPermission",
+        "lambda:EnableReplication",
+        "lambda:GetAccountSettings",
+        "lambda:GetAlias",
+        "lambda:GetEventSourceMapping",
+        "lambda:GetFunction",
+        "lambda:GetFunctionConfiguration",
+        "lambda:GetLayerVersion",
+        "lambda:GetLayerVersionPolicy",
+        "lambda:GetPolicy",
+        "lambda:InvokeAsync",
+        "lambda:InvokeFunction",
+        "lambda:ListAliases",
+        "lambda:ListEventSourceMappings",
+        "lambda:ListFunctions",
+        "lambda:ListLayerVersions",
+        "lambda:ListLayers",
+        "lambda:ListTags",
+        "lambda:ListVersionsByFunction",
+        "lambda:PublishLayerVersion",
+        "lambda:PublishVersion",
+        "lambda:PutFunctionConcurrency",
+        "lambda:RemoveLayerVersionPermission",
+        "lambda:RemovePermission",
+        "lambda:TagResource",
+        "lambda:UntagResource",
+        "lambda:UpdateAlias",
+        "lambda:UpdateEventSourceMapping",
+        "lambda:UpdateFunctionCode",
+        "lambda:UpdateFunctionConfiguration"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:lambda:us-east-2:<redacted>:function:ad440-w19-lambda-api-amy-test",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-east-2"
+        }
+      }
+    }
+  ]
+}

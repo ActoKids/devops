@@ -1,5 +1,3 @@
-deveops/scripts/lambdaterraform/variables.tf
-
 # Terraform Variables
 variable "access_key" {}
 variable "secret_key" {}

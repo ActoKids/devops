@@ -1,30 +1,36 @@
-// Load the SDK 
-var AWS = require("aws-sdk");
-AWS.config.loadFromPath('./config.json');
+let AWS = require("aws-sdk")
 
 //create time period variables
-var today = new Date;
-var end = today.getFullYear() + '-' + today.getMonth()+1 + '-' + today.getDate();
-//get yesterday's date
-today.setDate(today.getDate()-1);
-var start = today.getFullYear() + '-' + today.getMonth()+1 + '-' + today.getDate();
+let today = new Date
+let month = (today.getUTCMonth() + 1) < 10 ? ('0' + (today.getUTCMonth() + 1)) : (today.getUTCMonth() + 1);
+let start = today.getUTCFullYear() + '-' + month + '-' + today.getUTCDate()
+let end = today.getUTCFullYear() + '-' + month + '-' + (today.getUTCDate() + 1);
 
 //instantiate costexplorer service
-var costexplorer = new AWS.CostExplorer({apiVersion: '2017-10-25', region: "us-east-1"});
-var params = {
-    Granularity: "DAILY",
-    Metrics: ['UnblendedCost'],
-    GroupBy: [{
-        Type: 'DIMENSION',
-        Key: 'SERVICE',
-      }],
-    TimePeriod:{
-        Start:start,
-        End:end
+let costexplorer = new AWS.CostExplorer({apiVersion: '2017-10-25', region: "us-east-1"});
+let params = {
+        Granularity: "DAILY",
+        Metrics: ['BlendedCost'],
+        GroupBy: [{
+            Type: 'DIMENSION',
+            Key: 'SERVICE',
+        }],
+        TimePeriod:{
+            Start:start,
+            End:end
+        }
     }
-}
 
-costexplorer.getCostAndUsage(params, function(err, data) {
-    if (err) console.log(err, err.stack);
-    else console.log(JSON.stringify(data));
-});
+exports.handler = (event, context, callback) => {
+    
+    let getCostAndUsagePromise = costexplorer.getCostAndUsage(params).promise();
+    getCostAndUsagePromise.then(
+        (data) => {
+            callback(null, JSON.stringify(data));
+        },
+        (err) => {
+            console.log(err);
+            callback(err);
+        }
+    );
+};

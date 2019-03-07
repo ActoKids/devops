@@ -1,0 +1,34 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cognito-identity:DescribeIdentityPool",
+                "cognito-identity:MergeDeveloperIdentities",
+                "cognito-identity:LookupDeveloperIdentity",
+                "cognito-identity:UnlinkDeveloperIdentity",
+                "cognito-identity:ListIdentities",
+                "cognito-identity:GetOpenIdTokenForDeveloperIdentity",
+                "cognito-identity:UpdateIdentityPool",
+                "cognito-identity:GetIdentityPoolRoles"
+            ],
+            "Resource": "arn:aws:cognito-identity:us-east-2:061431082068:identitypool/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "cognito-identity:GetId",
+                "cognito-identity:ListIdentityPools",
+                "cognito-identity:SetIdentityPoolRoles",
+                "cognito-identity:UnlinkIdentity",
+                "cognito-identity:GetOpenIdToken",
+                "cognito-identity:DescribeIdentity",
+                "cognito-identity:GetCredentialsForIdentity"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
