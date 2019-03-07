@@ -1,6 +1,6 @@
 #run the configuration for aws credentials
 aws configure
-$ACTO_HOSTED_ZONE_ID=Z2O1EMRO9K5GLX
+ACTO_HOSTED_ZONE_ID=Z2O1EMRO9K5GLX
 #creates a route53 record set for www-dev.2edusite.com
 aws route53 change-resource-record-sets --hosted-zone-id $ACTO_HOSTED_ZONE_ID --change-batch '
 {
