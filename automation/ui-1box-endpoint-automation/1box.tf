@@ -4,19 +4,21 @@ provider "aws" {
     secret_key = "${var.secret_key}"
     region     = "us-east-2"
 }
-// Create a variable for domain name
+# Terraform Variables
+variable "access_key" {}
+variable "secret_key" {}
+variable "region" {
+    default = "us-east-2"
+}
 variable "www_domain_name" {
   default = "www.2edusite.com"
 }
-
-// Create a variable for root domain name
 variable "root_domain_name" {
   default = "2edusite.com"
 }
 resource "aws_s3_bucket" "www" {
   bucket = "${var.www_domain_name}"
   acl    = ""
-  // AWS policy.
   policy = <<POLICY
 {
   "Version":"2012-10-17",
@@ -31,17 +33,12 @@ resource "aws_s3_bucket" "www" {
   ]
 }
 POLICY
-
-  // S3 configuration to the website
   website {
-    // Request what should be shown when there is a request to S3
     index_document = "index.html"
     error_document = "index.html"
   }
 }
 
-
-// Create a SSL certification
 resource "aws_acm_certificate" "certificate" {
   domain_name       = "*.${var.root_domain_name}"
   validation_method = "EMAIL"
@@ -50,13 +47,11 @@ resource "aws_acm_certificate" "certificate" {
 resource "aws_cloudfront_distribution" "www_distribution" {
   origin {
     custom_origin_config {
-      // AWS defaults
       http_port              = "80"
       https_port             = "443"
       origin_protocol_policy = "http-only"
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
-    // S3 bucket URL
     domain_name = "${aws_s3_bucket.www.website_endpoint}"
     origin_id   = "${var.www_domain_name}"
   }
