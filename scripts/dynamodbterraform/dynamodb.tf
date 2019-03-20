@@ -18,4 +18,9 @@ attribute {
     name = "ID"
     type = "S"
   }
+    
+tags = {
+   Name        = "${var.table_name}"
+   Environment = "${var.environment}"
+ }
 }
