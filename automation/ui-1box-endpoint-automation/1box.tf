@@ -17,10 +17,10 @@ variable "root_domain_name" {
   default = "2edusite.com"
 }
 variable "environment" {
-  default = "string"
+  type = "string"
 }
 variable "member" {
-  default = "string"
+  type = "string"
 }
 
 resource "aws_s3_bucket" "www" {
