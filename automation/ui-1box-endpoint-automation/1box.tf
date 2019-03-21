@@ -16,6 +16,13 @@ variable "www_domain_name" {
 variable "root_domain_name" {
   default = "2edusite.com"
 }
+variable "environment" {
+  default = "string"
+}
+variable "member" {
+  default = "string"
+}
+
 resource "aws_s3_bucket" "www" {
   bucket = "${var.www_domain_name}"
   acl    = ""
@@ -40,9 +47,18 @@ POLICY
 }
 
 resource "aws_acm_certificate" "certificate" {
-  domain_name       = "*.${var.root_domain_name}"
-  subject_alternative_names = ["${var.root_domain_name}"]
+  domain_name   = "www.webui-${var.member}.${var.www_domain_name}"
+  validation_method = "DNS"
+
+  tags = {
+    Environment = "${var.environment}"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
+
 resource "aws_cloudfront_distribution" "www_distribution" {
   origin {
     custom_origin_config {
